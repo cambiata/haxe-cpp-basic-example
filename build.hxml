@@ -1,0 +1,9 @@
+-cp src
+-D analyzer-optimize
+
+-main Main
+
+-cpp out
+
+-cmd clear
+-cmd out/Main
