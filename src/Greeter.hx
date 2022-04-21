@@ -1,5 +1,5 @@
 @:include("./Greeter.cpp")
-@:extern("Greeter")
+@:extern("Greeter*")
 extern class Greeter {
 	@:native("new Greeter") public static function create():Greeter;
 

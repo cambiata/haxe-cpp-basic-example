@@ -9,7 +9,6 @@ class Greeter
 
   void sayGoodbye () {
         std::cout << "Greeter saying \"Goodbye!\" " << std::endl;        
-    }
-
+  }
 
 };
