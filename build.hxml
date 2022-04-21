@@ -1,9 +1,8 @@
 -cp src
--D analyzer-optimize
-
 -main Main
-
 -cpp out
+-D analyzer-optimize
+-dce full
 
 -cmd clear
 -cmd out/Main
