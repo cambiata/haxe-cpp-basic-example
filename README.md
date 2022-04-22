@@ -1,9 +1,36 @@
-# Haxe project
+# haxe-cpp-basic-example
 
-This is an example Haxe project scaffolded by Visual Studio Code.
+Simple test project that shows how to write externs for simple native cpp code:
 
-Without further changes the structure is following:
+```cpp
+// src/Greeter.cpp
 
- * `src/Main.hx`: Entry point Haxe source file
- * `build.hxml`: Haxe command line file used to build the project
- * `README.md`: This file
+#include <iostream>
+
+class Greeter
+{
+  public:
+  void sayHello () {
+        std::cout << "Greeter saying \"Hello!\" \n";        
+    }
+
+  void sayGoodbye () {
+        std::cout << "Greeter saying \"Goodbye!\" " << std::endl;        
+  }
+
+};
+```
+
+```haxe
+// src/Greeter.hx
+
+@:include("./Greeter.cpp")
+@:native("Greeter*")
+extern class Greeter {
+	@:native("new Greeter") public static function create():Greeter;
+
+	@:native("sayHello") public function sayHello():Void;
+	@:native("sayGoodbye") public function sayGoodbye():Void;
+}
+
+```
